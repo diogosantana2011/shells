@@ -71,8 +71,10 @@ cat file 3 | less - less option after pipe, displays output one page at a time. 
 /************************* FIND **************************!/
 
 find /etc -name '*.conf' | less - find in /etc dir by -name (string)'fileName example'. Asterisk in name to match any characters
+find Development/ -name 'cy' > tempfile | less - find in Development dir by -name (string)'fileName example'. Asterisk in name to match any characters
 
 /************************* GREP **************************!/
+
 ==================================================
 grep is an abbreviation for ‘global regular expression print’ 
 and will search for text patterns 
@@ -83,7 +85,14 @@ which will check each line and display those that match the search string.
 The search string here is looking for a simple literal match to ‘hz’. 
 The -i (ignore case) option ensures that variants such as ‘Hz’ and ‘HZ’ are also found.
 ==================================================
+
 cat /proc/cpuinfo - Show processor information (located in /proc/)
 cat /proc/cpuinfo | grep -i 'hz'
 cat /proc/cpuinfo | grep -i 'hz' | less
-/************************* GREP **************************!/
+
+/************************* Returning data from file to terminal **************************!/
+
+find Development/ -name 'cy' > tempfile
+less < tempfile
+
+/************************* less < {file} **************************!/
