@@ -1,0 +1,89 @@
+/************************* CALendar **************************/
+
+cal - show calendar of current month
+cal 2020 - show calendar for year
+cal {month} {year} - show calendar of month of specified year
+
+/************************* LS **************************/
+
+ls - list files in dir
+ls /var - list files in directory named 'var'
+ls -l /var (letter l) - list files -l (verbose/long); 
+ls -l -t /var - list files -l (verbose) -t (sorted by date/time) in dir named var
+ls -lt /var
+ls -tl /var
+
+/************************ LS & HELP **************************/
+
+ls --help
+man ls
+whatis ls
+apropos list
+apropos 'list directory'
+help
+
+/************************* NOTES **************************!/
+
+Typing small bit of command or letter and hitting tab twice, 
+displays suggested/available commands.
+
+Redirection with > overwrites anything in the file; using >> preserves content and appends the new output at the end of the file.
+
+/************************* FILE MANIPULATION EXMPLES **************************!/
+
+pwd - print working directory
+mkdir - create a directory ; param is directory name ('mkdir test')
+cd test - change directory to 'test' folder
+cd ~ - navigate to root/home
+cd .. - navigate a level up from current directory
+ls -a - list all directory entries including any hidden files
+touch file1 - Creates a new empty file. Argument is name of file. Also modifies timestamp if actioned on existing file.
+date > file2 - The '>' symbol will redirect output from the screen into a file. In the example given, the output from the date command is redirected to file2, creating it if it doesn’t exist or overwriting it if it does.
+file folder1 - The file command will inspect the contents of a file and report what type of file it is. 
+cat file2 - The cat command is very commonly used to display the content of a file on screen. The seemingly odd name is an abbreviation of catenate or concatenate, meaning to link together in a chain. If several files are given as arguments, then cat will output each file in turn, concatenating them into a single stream. The output can then be redirected into a single file using the > symbol.
+cal > file3
+cat file1 file2 file3
+cat file1 file2 file3 > combined - combines all 3 files into new combined. If no file exists, write file.
+cat combined
+
+/************************* Copy **************************!/
+
+cp {directory to copy} [file/directory] - copy command; The second argument specifies where the copy will be located: this can specify either a directory, or a new filename or both.
+mv - move command,  it is also the command used to rename a file. In either case, just one copy of the file remains and it has a new path/filename
+cp -r folder1 folder2 - The cp command can also be used to copy directories with the -r (recursive) option.
+
+/************************* SUDO **************************!/
+
+cat /etc/shadow - If on !sudo ; permission denied
+sudo cat /etc/shadow - The /etc/shadow file contains information about user accounts, not readable by normal users. Hence permission denial above.
+sudo su root - switch shell to another user account, here root.
+#### The su (switch user command) allows you to log into the CLI as a different user, include example of root above, but also another existing user. Password prompts are given if password is set.
+cat /etc/shadow - as a root user, you can call without sudo on /etc/shadow/
+exit - exits su root
+
+/************************* SUDO **************************!/
+
+/************************* | less **************************!/
+cat file3 
+
+cat file 3 | less - less option after pipe, displays output one page at a time. Press h for help or q for quit
+
+/************************* FIND **************************!/
+
+find /etc -name '*.conf' | less - find in /etc dir by -name (string)'fileName example'. Asterisk in name to match any characters
+
+/************************* GREP **************************!/
+==================================================
+grep is an abbreviation for ‘global regular expression print’ 
+and will search for text patterns 
+and output matches to the console.
+==================================================
+The output from cat is piped into grep,
+which will check each line and display those that match the search string. 
+The search string here is looking for a simple literal match to ‘hz’. 
+The -i (ignore case) option ensures that variants such as ‘Hz’ and ‘HZ’ are also found.
+==================================================
+cat /proc/cpuinfo - Show processor information (located in /proc/)
+cat /proc/cpuinfo | grep -i 'hz'
+cat /proc/cpuinfo | grep -i 'hz' | less
+/************************* GREP **************************!/
