@@ -74,17 +74,16 @@ find /etc -name '*.conf' | less - find in /etc dir by -name (string)'fileName ex
 find Development/ -name 'cy' > tempfile | less - find in Development dir by -name (string)'fileName example'. Asterisk in name to match any characters
 
 /************************* GREP **************************!/
-
-==================================================
-grep is an abbreviation for ‘global regular expression print’ 
-and will search for text patterns 
-and output matches to the console.
-==================================================
-The output from cat is piped into grep,
-which will check each line and display those that match the search string. 
-The search string here is looking for a simple literal match to ‘hz’. 
-The -i (ignore case) option ensures that variants such as ‘Hz’ and ‘HZ’ are also found.
-==================================================
+        ==================================================
+            grep is an abbreviation for ‘global regular expression print’ 
+            and will search for text patterns 
+            and output matches to the console.
+        ==================================================
+            The output from cat is piped into grep,
+            which will check each line and display those that match the search string. 
+            The search string here is looking for a simple literal match to ‘hz’. 
+            The -i (ignore case) option ensures that variants such as ‘Hz’ and ‘HZ’ are also found.
+        ==================================================
 
 cat /proc/cpuinfo - Show processor information (located in /proc/)
 cat /proc/cpuinfo | grep -i 'hz'
@@ -95,4 +94,77 @@ cat /proc/cpuinfo | grep -i 'hz' | less
 find Development/ -name 'cy' > tempfile
 less < tempfile
 
-/************************* less < {file} **************************!/
+/************************* tar (tape archive)**************************!/
+        ===================================================
+            standard program used to create an archive
+        ===================================================
+
+
+tar --list --file=life.tar.gz - list files within zip
+tar --extract --verbose --file=life.tar.gz - extracts zip
+tar --create --verbose --file=mylife.tar life/ - create a file in specified dir
+tar --list --file=mylife.ta - list contents of file="fileName"
+cd .. - navigate 1 level up
+mkdir extract - make new directory
+cp work/mylife.tar extract/ - copy file to different directory
+tar --extract --verbose --file=mylife.tar - extract file
+less < mylife.tar - See the data of file on less
+
+        ===================================================
+    the compression method is given as an additional parameter to tar 
+    which will call on the appropriate utility, gzip or bzip2, 
+    to carry out the compression.
+        ===================================================
+
+tar --create --verbose --gzip --file=mylife.tgz life/ - create files via gzip to specified directory
+tar --create --verbose --bzip2 --file=mylife.tbz life/ - create file via bzip2 to specified directory
+
+        ===================================================
+    Extract files. Will overrite if already existing
+        ===================================================
+
+tar --extract --verbose --file=mylife.tgz
+tar --extract --verbose --file=mylife.tbz
+
+        ===================================================
+    Extract specific parts of zip file into working dir. Will override 
+    if already existing
+        ===================================================
+
+tar --extract --verbose --file=mylife.tgz life/animals/insects
+tar --extract --verbose --file=mylife.tgz life/animals/birds/penguin
+
+/************************* sha256sum **************************!/
+
+sha256sum {file} - displays hash of file
+sha256sum - enters console type mode
+
+/************************* diff -r (recursive) **************************!/
+        ===================================================
+            The diff command can be used to compare the contents of single files or, 
+            with the -r option given here, recursively for all files in a directory.
+        ===================================================
+
+diff -r ~/work/life ~/extract/life - 
+ls -R -l ~/extract/life
+
+
+/************************* Compression **************************!/
+        ===================================================
+            2 commonly used are:
+                - gzip  (addes new file with same name && .gz extension added.)
+                - bzip2 (more space-efficient)
+        ===================================================
+
+gzip mylife.tar - compress file using gzip 
+ls
+gunzip mylife.tar.gz - Paired (to gzip) command gunzip decompresses the file, stripping off the extension.
+ls
+gzip --verbose --keep mylife.tar - '--keep' option retains the original file
+bzip2 --verbose --keep mylife.tar - '--verbose' displays compression ratio achieved
+
+        ===================================================
+            2 commonly used are:
+                - zip
+                - unzip
+        ===================================================
