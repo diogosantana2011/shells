@@ -1,11 +1,9 @@
 #!/bin/bash
 
-cd ~ || exit
-pwd
-# ls -la
+# ls -lh
 greeting='Helloooo from shell script!'
 echo "$greeting"
-echo 'Another console print via bash.'
+echo 'Another echo via bash.'
 
 # WHO ARE YOU
 echo 'who are you? '
@@ -14,9 +12,7 @@ read -r who
 echo "Hello, $who!"
 
 # AGE
-
 echo 'How old are you?'
-
 read -r age
 
 if [ "$age" -gt 20 ]; then
@@ -33,9 +29,17 @@ for file in $files; do
 done
 
 # Array
-declare -a array=('This' 'is' 'an' 'array')
+declare -a array=('Now' 'Well\' 'call' 'another' 'script')
 
 # Looping through array
 for item in "${array[@]}"; do
   echo "$item"
 done
+
+echo 'Will now call on other version.sh, and script1.sh'
+echo
+
+# Call on script.sh
+chmod 755 versions.sh
+./versions.sh
+./script1.sh
