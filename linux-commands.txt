@@ -21,6 +21,7 @@ whatis ls
 apropos list
 apropos 'list directory'
 help
+env -  displays a listing of other variables which you may also refer to.
 
 /************************* NOTES **************************!/
 
@@ -94,7 +95,7 @@ cat /proc/cpuinfo | grep -i 'hz' | less
 find Development/ -name 'cy' > tempfile
 less < tempfile
 
-/************************* tar (tape archive)**************************!/
+/************************* TAR (tape archive) **************************!/
         ===================================================
             standard program used to create an archive
         ===================================================
@@ -134,12 +135,12 @@ tar --extract --verbose --file=mylife.tbz
 tar --extract --verbose --file=mylife.tgz life/animals/insects
 tar --extract --verbose --file=mylife.tgz life/animals/birds/penguin
 
-/************************* sha256sum **************************!/
+/************************* SHA256SUM **************************!/
 
 sha256sum {file} - displays hash of file
 sha256sum - enters console type mode
 
-/************************* diff -r (recursive) **************************!/
+/************************* DIFF -r (recursive) **************************!/
         ===================================================
             The diff command can be used to compare the contents of single files or, 
             with the -r option given here, recursively for all files in a directory.
@@ -167,4 +168,30 @@ bzip2 --verbose --keep mylife.tar - '--verbose' displays compression ratio achie
             2 commonly used are:
                 - zip
                 - unzip
+        ===================================================
+
+/************************* Calling Scripts **************************!/
+        ===================================================
+            Below represents dynamic values to be used with commands, 
+            within the script; when calling on a script 
+            and passing arguments to the script via CLI.            
+        ===================================================
+
+$0 - The name of the Bash script.
+$1 - $9 - The first 9 arguments to the Bash script. (As mentioned above.)
+$# - How many arguments were passed to the Bash script.
+$@ - All the arguments supplied to the Bash script.
+$? - The exit status of the most recently run process.
+$$ - The process ID of the current script.
+$USER - The username of the user running the script.
+$HOSTNAME - The hostname of the machine the script is running on.
+$SECONDS - The number of seconds since the script was started.
+$RANDOM - Returns a different random number each time is it referred to.
+$LINENO - Returns the current line number in the Bash script.
+
+        ===================================================
+            Calling variables from differet scrips via export,
+            Example:
+                - script.sh exists, and within checking-version.sh we 
+            export vars, which are called within script.sh.         
         ===================================================
