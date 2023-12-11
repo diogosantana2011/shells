@@ -3,12 +3,12 @@
 name=Diogo
 surname=Santana
 
+echo 'Will now call on final script, script.sh'
 # Let's verify their current value
 echo $0 :: Name : $name, Surname : $surname
 export surname
 export name
 
-echo 'Will now call on final script, script.sh'
 # Call on script.sh
 ./script.sh
 
