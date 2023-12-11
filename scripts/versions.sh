@@ -20,4 +20,4 @@ listDirChars=$( ls /etc | wc -mlw )
 
 ls -lh
 echo There are $listDirs in directory /etc
-echo $listDirChars
+echo There are $listDirChars in three different directories

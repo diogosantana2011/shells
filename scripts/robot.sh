@@ -6,7 +6,7 @@ echo "$greeting"
 echo 'Another echo via bash.'
 
 # WHO ARE YOU
-echo 'who are you? '
+echo 'What is your name? '
 # who="Diogo Santana"
 read -r who
 echo "Hello, $who!"
@@ -20,6 +20,7 @@ if [ "$age" -gt 20 ]; then
 else
   echo 'You are underage.'
 fi
+echo
 
 # Loop
 files="/Users/diogosantana/Development/shells/*"
@@ -27,6 +28,7 @@ files="/Users/diogosantana/Development/shells/*"
 for file in $files; do
   echo $(basename "$file")
 done
+echo
 
 # Array
 declare -a array=('Now' 'Well\' 'call' 'another' 'script')
@@ -36,6 +38,7 @@ for item in "${array[@]}"; do
   echo "$item"
 done
 
+echo
 echo 'Will now call on other version.sh, and script1.sh'
 echo
 
