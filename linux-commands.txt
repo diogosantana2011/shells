@@ -195,3 +195,39 @@ $LINENO - Returns the current line number in the Bash script.
                 - script.sh exists, and within checking-version.sh we 
             export vars, which are called within script.sh.         
         ===================================================
+
+/************************* Exercise **************************!/
+        ===================================================
+            When in Nano:
+            ctrl + o   &&     ctrl + x 
+            save       and     exit           
+        ===================================================
+        ===================================================
+        ADDING SCRIPT AS UTILITY:
+        
+            For a script used only by yourself, 
+            normal practice would be to move the script 
+            to a directory ~/bin which must be added to PATH. 
+            If the script is useful to all users, 
+            root could move it to /usr/local/bin which will
+            be on the PATH for all users. 
+
+            That might also be the time to lose the .sh extension
+            so that your script would be indistinguishable 
+            from all the other scripts and binary programs 
+            installed on the system. 
+            
+            Once all these steps are complete, 
+            any user of your system could enter hello 
+            and receive the output ‘Hello world!’.
+        ===================================================
+
+cd scripts
+nano hello.sh - opens nano and lets you write out to file.
+ls -l hello.sh - list created file -long
+chmod +x hello.sh - mark file as executable file
+ls -F hello.sh - list executable files with *
+./hello.sh - run file without shebang
+hello.sh - run file with sheband 
+/home/<youraccount>/Development/shells/scripts/hello.sh
+echo $PATH
