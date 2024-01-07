@@ -231,3 +231,21 @@ ls -F hello.sh - list executable files with *
 hello.sh - run file with sheband 
 /home/<youraccount>/Development/shells/scripts/hello.sh
 echo $PATH
+
+
+/************************* ps/top/htop **************************!/
+        ===================================================
+        'ps' shows processes owned by you and running 
+            on current shell session.
+                ->   PID TTY           TIME CMD
+                    1304 ttys000    0:00.02 -bash
+        ===================================================
+        'top' opens non-human readable task manager
+        'htop' opens human readable task manager
+        ===================================================
+ps 
+
+ps -x 
+ps -u {user} # specifying '-u'/user and user ID/name
+top # 'q' to exit
+htop # F10 to exit
