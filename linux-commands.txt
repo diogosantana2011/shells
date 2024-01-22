@@ -302,3 +302,27 @@ pstree
         ===================================================
 
 crontab -e # opens vim *GOOD LUCK EXITING XD* ; to be further researched
+
+
+/************************* COMMON POSIX SIGNALS **************************!/
+        Use man signal for more information
+        ===================================================
+        Signal	Number	Default action	Description
+
+        sigint	2	Terminate	Interrupt from keyboard (Ctrl+C)
+        sigquit	3	Core dump	Quit from keyboard (Ctrl+\)
+        sigill	4	Core dump	Illegal instruction
+        sigkill	9	Terminate	Kill (cannot be caught or ignored)
+        sigterm	15	Terminate	Termination signal (can be caught or ignored)
+        sigstp	19	Stop	Stop or pause to continue later (Ctrl+Z)
+        sigcont	18	Continue	Continue if stopped
+        ===================================================
+        OPEN CALCULATOR FOR BELOW EXAMPLE
+        ===================================================
+
+kill -l # should return a list of all kill signal calls
+ps -x # show running processes owned by user
+pgrep -l "Calculator" # get PID for calculator running process
+killall "Calculator" # OR
+kill -SIGKILL PID
+
