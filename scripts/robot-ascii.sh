@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-
+# Credit to cheesits456 for this script! Not mine!
+# Using it to learn :)
 length=${#1}
 
 hex_to_int() {

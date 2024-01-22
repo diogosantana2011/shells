@@ -18,7 +18,9 @@ read -r age
 if [ "$age" -gt 20 ]; then
   echo 'You are overage.'
 else
-  echo 'You are underage.'
+  echo 'You are underage'
+  echo '¯\_(ツ)_/¯'
+  echo GG! 
 fi
 echo
 
