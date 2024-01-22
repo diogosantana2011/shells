@@ -322,7 +322,7 @@ crontab -e # opens vim *GOOD LUCK EXITING XD* ; to be further researched
 
 kill -l # should return a list of all kill signal calls
 ps -x # show running processes owned by user
-pgrep -l "Calculator" # get PID for calculator running process
+pgrep -l "Calculator" # search for PID for calculator running process with string named of running process
 killall "Calculator" # OR
 kill -SIGKILL PID
 
