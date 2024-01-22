@@ -249,3 +249,56 @@ ps -x
 ps -u {user} # specifying '-u'/user and user ID/name
 top # 'q' to exit
 htop # F10 to exit
+
+/************************* sleep **************************!/
+        ===================================================
+        An interrupted job with sleep for example, user 
+        in combination with fg %1 or bg %1 will allow interrupted
+        job to return to its completion
+        ===================================================
+
+./timewaster.sh 10 # IF YOU PRESS ctrl+z to interrupted
+
+fg %1 # This will make previously interrupted job return to execution
+bg %1 # This will make previously interrupted job return to exectuion, but in background
+
+./timewaster.sh 11 & # Similar to running job and entering bg %1 after
+
+        ===================================================
+        If you run:
+
+        - ./timewaster.sh 11 & (PRESS ENTER)
+        - ./timewaster.sh 12 & (PRESS ENTER)
+        - ./timewaster.sh 10 & (PRESS ENTER)
+
+        Then you action 'jobs', it should show you:
+
+        [3]-  Running                 ./timewaster.sh 11 &
+        [4]+  Running                 ./timewaster.sh 12 &
+        [5]+  Running                 ./timewaster.sh 10 &
+
+        If you kill the first running process using:
+        - kill %1 
+
+        The below will show
+
+        [1]-  Terminated: 15          ./timewaster.sh 11 & 
+        [2]+  Running                 ./timewaster.sh 12 &
+
+        A job that is running in the background can 
+        be brought to the foreground with the fg command.
+        ===================================================
+
+/************************* pstree **************************!/
+        ===================================================
+        this commands shows the running processes as a tree
+        not on bash by default; can be installed via homebrew
+        ===================================================
+pstree 
+
+/************************* crontab **************************!/
+        ===================================================
+        Is used to schedule background jobs at regular intervals
+        ===================================================
+
+crontab -e # opens vim *GOOD LUCK EXITING XD* ; to be further researched
