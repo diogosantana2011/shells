@@ -340,5 +340,5 @@ free
         Loaded modules
         ===================================================
 
-kmutil showloaded
+kmutil showloaded > loadedModule-Date.txt
 kextstat
