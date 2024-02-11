@@ -326,3 +326,19 @@ pgrep -l "Calculator" # search for PID for calculator running process with strin
 killall "Calculator" # OR
 kill -SIGKILL PID
 
+/************************* Swapspace enquiry **************************!/
+        Find swap space info on mac
+        ===================================================
+
+sysctl vm. swapusage
+
+        Find swap space info on Linux
+        ===================================================
+free 
+
+/************************* Swapspace enquiry **************************!/
+        Loaded modules
+        ===================================================
+
+kmutil showloaded
+kextstat
