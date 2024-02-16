@@ -330,15 +330,16 @@ kill -SIGKILL PID
         Find swap space info on mac
         ===================================================
 
-sysctl vm. swapusage
-
-        Find swap space info on Linux
-        ===================================================
-free 
+sysctl vm. swapusage # MAC
+free # LINUX
 
 /************************* Swapspace enquiry **************************!/
-        Loaded modules
+        Loaded modules - MAC  &  LINUX
         ===================================================
 
+lsmod # Linux version
+modinfo # Shows module information
 kmutil showloaded > loadedModule-Date.txt
 kextstat
+
+lsmod | grep -i usb. # LINUX: locate 'usb' related names
