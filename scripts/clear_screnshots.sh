@@ -1,5 +1,6 @@
 #!/bin/bash
 SCREENSHOT_FILE_NAME="Screenshot.png"
+SCREENSHOT_DIRECTORY=~/Pictures/Screenshots
 
 cd ~/Pictures
 ls -la && sleep 0.5
@@ -25,3 +26,16 @@ if [ ! `find . -iname "screenshot-*" -type f` ]; then
     else
     echo Some screenshots remain. Re-run script.
 fi
+
+echo Navigating to screenshots folder
+cd $SCREENSHOT_DIRECTORY
+
+# find . -iname "Screenshot*" -type f -print
+
+for FILES in `find . -iname "Screenshot from *" -type f`
+do
+    # REMOVE SCREENSHOTS
+    rm -v -f -- *\ $FILES
+done
+
+echo Screenshots cleaned from $SCREENSHOT_DIRECTORY
